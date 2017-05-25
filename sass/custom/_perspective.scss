@@ -1,0 +1,11 @@
+.perspective-box {
+  perspective: 300px;
+}
+.perspective-content {
+  transform: rotateY(15deg);
+  transform-origin: left;  /* Точка поворота слева */
+  // background: green;
+  min-width: 100px;
+  // padding: 0 20px;
+  // line-height: 3;
+}

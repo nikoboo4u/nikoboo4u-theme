@@ -1,0 +1,58 @@
+.l-header {
+  height: 90vh;
+  padding-top: 10vh;
+  background: url('../images/overlay3_web.jpg') center no-repeat;
+  background-size: cover;
+  text-align: center;
+  @include media-breakpoint-up(md) {
+    height: 100vh;
+  }
+
+  &--overlay {
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 90vh;
+      width: 100%;
+      background: $themeOverlay;
+      opacity: 0.5;
+      // background: rgba(0, 0, 0, .5);
+      z-index: 1;
+      @include media-breakpoint-up (md) {
+        height: 100vh;
+      }
+    }
+  }
+}
+
+.l-header-box {
+  top: 25%;
+  position: relative;
+  z-index: 2;
+
+  &__title {
+    color: white;
+    text-shadow: 3px 3px 6px $themePrimary;
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+    @include media-breakpoint-up(md) {
+      font-size: 5rem;
+    }
+  }
+
+  &__link {
+    padding-top: 2rem;
+  }
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: $themeOverlay;
+  opacity: 0.4;
+}

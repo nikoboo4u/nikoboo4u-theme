@@ -1,0 +1,255 @@
+// Styling for the tree section
+
+.tree {
+  list-style: none;
+  padding: 0;
+  position: relative;
+
+  &:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: "";
+    width: 2px;
+    background-color: #f1f1f1;
+    left: 40px;
+    margin-left: -1.5px;
+  }
+
+  > li {
+    margin-bottom: 50px;
+    position: relative;
+    min-height: 50px;
+
+    &:after,
+    &:before {
+      content: " ";
+      display: table;
+    }
+
+    &:after {
+      clear: both;
+    }
+
+    .tree-panel {
+      width: 100%;
+      float: right;
+      padding: 0 20px 0 100px;
+      position: relative;
+      text-align: left;
+
+      &:before {
+        border-left-width: 0;
+        border-right-width: 15px;
+        left: -15px;
+        right: auto;
+      }
+
+      &:after {
+        border-left-width: 0;
+        border-right-width: 14px;
+        left: -14px;
+        right: auto;
+      }
+    }
+
+    .tree-image {
+      left: 0;
+      margin-left: 0;
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      z-index: 100;
+      background-color: $themePrimary;
+      color: white;
+      border-radius: 100%;
+      border: 7px solid #f1f1f1;
+      text-align: center;
+
+      h4 {
+        font-size: 10px;
+        margin-top: 12px;
+        line-height: 14px;
+      }
+    }
+
+    .tree-icon {
+      @extend .tree-image;
+      font-size: 68px;
+      line-height: 68px;
+
+      h4 {
+        font-size: 10px;
+        margin-top: 12px;
+        line-height: 14px;
+      }
+    }
+
+    &.tree-inverted > .tree-panel {
+      float: right;
+      text-align: left;
+      padding: 0 20px 0 100px;
+
+      &:before {
+        border-left-width: 0;
+        border-right-width: 15px;
+        left: -15px;
+        right: auto;
+      }
+
+      &:after {
+        border-left-width: 0;
+        border-right-width: 14px;
+        left: -14px;
+        right: auto;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .tree-heading {
+    h2,
+    h3,
+    h4 {
+      margin-top: 0;
+      color: inherit;
+
+      &.subheading {
+        text-transform: none;
+      }
+    }
+  }
+
+  .tree-body {
+     > p,
+    > ul {
+      margin-bottom: 0;
+    }
+  }
+}
+@media(min-width:768px) {
+  .tree {
+    &:before {
+      left: 50%;
+    }
+
+    > li {
+      margin-bottom: 100px;
+      min-height: 100px;
+
+      .tree-panel {
+        width: 41%;
+        float: left;
+        padding: 0 20px 20px 30px;
+        text-align: right;
+      }
+
+      .tree-image {
+        width: 100px;
+        height: 100px;
+        left: 50%;
+        margin-left: -50px;
+
+        h4 {
+          font-size: 13px;
+          margin-top: 16px;
+          line-height: 18px;
+        }
+      }
+
+      .tree-icon {
+        font-size: 86px;
+        line-height: 86px;
+
+        h4 {
+          font-size: 10px;
+          margin-top: 12px;
+          line-height: 14px;
+        }
+      }
+
+      &.tree-inverted > .tree-panel {
+        float: right;
+        text-align: left;
+        padding: 0 30px 20px 20px;
+      }
+    }
+  }
+}
+@media(min-width:992px) {
+  .tree {
+    > li {
+      min-height: 150px;
+
+      .tree-panel {
+        padding: 0 20px 20px;
+      }
+
+      .tree-image {
+        width: 150px;
+        height: 150px;
+        margin-left: -75px;
+
+        h4 {
+          font-size: 18px;
+          margin-top: 30px;
+          line-height: 26px;
+        }
+      }
+
+      .tree-icon {
+        font-size: 136px;
+        line-height: 136px;
+
+        h4 {
+          font-size: 10px;
+          margin-top: 12px;
+          line-height: 14px;
+        }
+      }
+
+      &.tree-inverted > .tree-panel {
+        padding: 0 20px 20px;
+      }
+    }
+  }
+}
+@media(min-width:1200px) {
+  .tree {
+    > li {
+      min-height: 170px;
+
+      .tree-panel {
+        padding: 0 20px 20px 100px;
+      }
+
+      .tree-image {
+        width: 170px;
+        height: 170px;
+        margin-left: -85px;
+
+        h4 {
+          margin-top: 40px;
+        }
+      }
+
+      .tree-icon {
+        font-size: 154px;
+        line-height: 154px;
+
+        h4 {
+          font-size: 10px;
+          margin-top: 12px;
+          line-height: 14px;
+        }
+      }
+
+      &.tree-inverted > .tree-panel {
+        padding: 0 100px 20px 20px;
+      }
+    }
+  }
+}

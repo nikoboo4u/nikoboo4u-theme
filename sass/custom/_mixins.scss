@@ -1,0 +1,112 @@
+// Mixins
+
+// Bootstrap Button Variant
+
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 25%);
+  }
+  &:hover {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: darken($background, 17%);
+          border-color: darken($border, 25%);
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+          border-color: $border;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+//transition-all
+@mixin transition-all() {
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+// Background Cover Mixin
+
+@mixin background-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+@mixin background-gradient($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    // background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+    // background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+    // background-image:    -moz-linear-gradient(top, $startColor, $endColor);
+    // background-image:     -ms-linear-gradient(top, $startColor, $endColor);
+    // background-image:      -o-linear-gradient(top, $startColor, $endColor);
+    background-image:         linear-gradient(to top, $startColor, $endColor);
+    // filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');ругается валидатор css3
+}
+
+// Font Mixins
+// Заголовки - sans-serif-font
+// text serif
+
+@mixin serif-font {
+  font-family: "Roboto", "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin script-font {
+  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+}
+
+@mixin body-font {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin heading-font {
+  font-family: 'Open Sans', "Georgia", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+
+@mixin sans-serif-font() {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+@mixin text-shadow ($shadowColor) {
+  text-shadow: -1px 0 $shadowColor, 0 1px $shadowColor, 1px 0 $shadowColor, 0 -1px $shadowColor;
+}

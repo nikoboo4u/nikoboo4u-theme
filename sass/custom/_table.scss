@@ -1,0 +1,20 @@
+.table-inverse {
+  color: $table-inverse-color;
+  background-color: $table-inverse-bg;
+
+  th,
+  td,
+  thead th {
+    border-color: $body-bg;
+  }
+
+  &.table-bordered {
+    border: 0;
+  }
+  &--primary {
+    background-color: $brand-primary;
+  }
+  &--opacity {
+    background-color: rgba(75,0,130, .85);
+  }
+}

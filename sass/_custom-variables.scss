@@ -1,0 +1,23 @@
+// Variables
+
+// Gray and Brand Colors for use across theme
+
+
+$white: #fff;
+$black: #000;
+$indigo: #4b0082;
+$themePrimary:  $indigo; /*  #fed136;default!*/
+$themeDanger:     #e74c3c;
+$themeHover: lighten($themePrimary, 33.5%);
+$themeOverlay: darken($themePrimary, 66.5%);
+
+
+$grayBase:        #000 !default;
+$grayDarker:	   lighten($grayBase, 13.5%) !default; // #222
+$grayDark:		   lighten($grayBase, 20%) !default;   // #333
+$gray:			   lighten($grayBase, 33.5%) !default; // #555
+$grayLight:	   lighten($grayBase, 46.7%) !default; // #777
+$grayLighter:	   lighten($grayBase, 93.5%) !default; // #eee
+
+//shadowColor:
+$shadowColor: $grayLight;

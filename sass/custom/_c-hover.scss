@@ -1,0 +1,71 @@
+.effect {
+  position: relative;
+  overflow: hidden;
+
+  & .caption {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    color: gray;
+    transition: all 0.3s cubic-bezier(0.4, 0, 1, 1) 0s;
+
+    &--left {
+      top: 0;
+      left: -100%;
+    }
+
+    &__title {
+      @include heading-font;
+      font-size: $font-size-h4;
+      // font-size: 21px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      border-bottom: 1px solid white;
+      padding-bottom: 20px;
+      margin-top: 20px;
+    }
+  }
+
+  &:hover .caption {
+    top: 0;
+
+    &--left {
+      left: 0;
+    }
+  }
+}
+
+//навстречу сверху и снизу:
+.effect-meet {
+  &.caption {
+    position: absolute;
+    top: -100%;
+    left: 0px;
+    background: rgba(0,0,0,0.35);
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 1, 1) 0s;
+    z-index: 10;
+  }
+  & .eff-overlay {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background: rgba(0,0,0,0.35);
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 1, 1) 0s;
+    z-index: 5;
+  }
+  &:hover .caption{
+    top: 0px;
+  }
+  &:hover .eff-overlay {
+    top: 0px;
+  }
+}
